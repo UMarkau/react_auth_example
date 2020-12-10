@@ -9,20 +9,23 @@ export const Menu = () => {
     state: { isAuth },
   } = useContext(store);
 
-  const getNavItem = (name, path) => (
-    <li key={name}>
-      <NavLink to={path} exact>
-        {name}
-      </NavLink>
-    </li>
-  );
+  const getNavItem = (menuName, path) => {
+    const isExact = path === "/";
+    return (
+      <li key={menuName}>
+        <NavLink to={path} exact={isExact}>
+          {menuName}
+        </NavLink>
+      </li>
+    );
+  };
 
   return (
     <div className="menu">
       <ul>
         {routes.map(
-          ({ name, path, publicRoute }) =>
-            (publicRoute || isAuth) && getNavItem(name, path)
+          ({ menuName, path, publicRoute }) =>
+            (publicRoute || isAuth) && menuName && getNavItem(menuName, path)
         )}
       </ul>
     </div>
