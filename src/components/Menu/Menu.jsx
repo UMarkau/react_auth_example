@@ -1,16 +1,16 @@
-import "./Menu.css";
-import { useContext } from "react";
-import { NavLink } from "react-router-dom";
-import { routes } from "../../routes/routes";
-import { store } from "../../store";
+import './Menu.css';
+import {useContext} from 'react';
+import {NavLink} from 'react-router-dom';
+import {routes} from '../../routes/routes';
+import {store} from '../../store';
 
 export const Menu = () => {
   const {
-    state: { isAuth },
+    state: {isAuth},
   } = useContext(store);
 
   const getNavItem = (menuName, path) => {
-    const isExact = path === "/";
+    const isExact = path === '/';
     return (
       <li key={menuName}>
         <NavLink to={path} exact={isExact}>
@@ -24,8 +24,7 @@ export const Menu = () => {
     <div className="menu">
       <ul>
         {routes.map(
-          ({ menuName, path, publicRoute }) =>
-            (publicRoute || isAuth) && menuName && getNavItem(menuName, path)
+          ({menuName, path, publicRoute}) => (publicRoute || isAuth) && menuName && getNavItem(menuName, path)
         )}
       </ul>
     </div>

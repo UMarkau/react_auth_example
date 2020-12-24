@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import { Route, Redirect } from "react-router-dom";
-import { store } from "../store";
+import {useContext} from 'react';
+import {Route, Redirect} from 'react-router-dom';
+import {store} from '../store';
 
-export const ProtectedRoute = ({ component: Component, ...rest }) => {
+export const ProtectedRoute = ({component: Component, ...rest}) => {
   const {
-    state: { isAuth },
+    state: {isAuth},
   } = useContext(store);
 
   return (
@@ -16,7 +16,7 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => {
         ) : (
           <Redirect
             to={{
-              pathname: "/login",
+              pathname: '/login',
               state: {
                 from: props.location,
               },

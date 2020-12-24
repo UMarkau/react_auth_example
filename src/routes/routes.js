@@ -1,30 +1,24 @@
-import {
-  HomePage,
-  ProfilesPage,
-  SubscriptionsPage,
-  LoginPage,
-  ProfilePage,
-} from "../pages";
+import {HomePage, ProfilesPage, SubscriptionsPage, LoginPage, ProfilePage} from '../pages';
 
 export const routes = [
-  { menuName: "home", path: "/", component: HomePage },
+  {menuName: 'home', path: '/', component: HomePage},
   {
-    menuName: "subscriptions",
-    path: "/subscriptions",
+    menuName: 'subscriptions',
+    path: '/subscriptions',
     component: SubscriptionsPage,
   },
   {
-    menuName: "profiles",
-    path: "/profiles",
+    menuName: 'profiles',
+    path: '/profiles',
     component: ProfilesPage,
   },
   {
-    path: "/profiles/:id",
+    path: '/profiles/:id',
     component: ProfilePage,
   },
   {
-    menuName: "login",
-    path: "/login",
+    menuName: 'login',
+    path: '/login',
     component: LoginPage,
     publicRoute: true,
   },
